@@ -11,7 +11,7 @@ function TabContent(props){
   let cList2 = props.tabContList[props.tab]
   return <Nav className="me-auto">{cList2.map((c, idx)=>{
     return (<Nav.Link onClick={()=>{ 
-      let url = 'http://220.120.26.206/'
+      let url = ''
       props.kind === 'article' ? (url += "/category/article" + "/" + props.tab + "/" + idx) :
       (url += "/category/precedent" + "/" + props.tab + "/" + c)
       window.location.href =url}}><span  className="fontFt">{c}</span></Nav.Link>)})}</Nav>
@@ -68,13 +68,12 @@ export default function Article_category() {
     let [getData, setGetData] = useState(0);
   const {kind, c1, c2} = useParams();
   
-  const url = 'http://220.120.26.206/'
   const [loginData, setLoginData] = useState("");
   const handleClick = (e) => {
     // submit을 할 때 페이지 자체가 새로고침이 되는 것을 막음
     //e.preventDefault();
     axios.get('/logout'
-    ).then((res) => console.log(res)).then(window.location.href = (url + '/category/' + kind + '/' +  c1 + '/' + c2));
+    ).then((res) => console.log(res)).then(window.location.href = ('/category/' + kind + '/' +  c1 + '/' + c2));
   };
   useEffect(() => {
     async function fetchData() {

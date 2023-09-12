@@ -19,11 +19,11 @@ function App() {
     <div className="App">
 				<Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path= {"search/:query/:option"} element={<Search />} />
-          <Route path={'recommand'} element={<Recommand/>} />
-          <Route path={'category/:kind/:c1/:c2'} element={<Article_category/>} />
+          <Route path= {"/search/:query/:option"} element={<Search />} />
+          <Route path={'/recommand'} element={<Recommand/>} />
+          <Route path={'/category/:kind/:c1/:c2'} element={<Article_category/>} />
           <Route path={'/login'} element={<Login/>} />
-          <Route path={'serch/:kind/:query/:option/:page'} element={<Search_detail/>} />
+          <Route path={'/search/:kind/:query/:option/:page'} element={<Search_detail/>} />
 				</Routes>
     </div>
   );
